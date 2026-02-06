@@ -128,7 +128,12 @@ export default function HowItWorksPage() {
               <div className={i % 2 === 1 ? 'lg:order-2' : ''}>
                 <div className="space-y-6">
                   <div className="flex items-center gap-4">
-                    <div className="text-5xl">{step.icon}</div>
+                    <div className="text-5xl">
+                      {(() => {
+                        const Icon = step.icon;
+                        return <Icon className="w-12 h-12 text-primary" />;
+                      })()}
+                    </div>
                     <div>
                       <p className="text-primary font-bold text-sm uppercase">Step {step.number}</p>
                       <h2 className="text-3xl lg:text-4xl font-black tracking-tight text-foreground">
@@ -154,7 +159,12 @@ export default function HowItWorksPage() {
               </div>
               <div className={i % 2 === 1 ? 'lg:order-1' : ''}>
                 <div className="card-glow p-12 h-full flex items-center justify-center">
-                  <div className="text-8xl opacity-40">{step.icon}</div>
+                  <div className="opacity-40">
+                    {(() => {
+                      const Icon = step.icon;
+                      return <Icon className="w-32 h-32 text-primary" />;
+                    })()}
+                  </div>
                 </div>
               </div>
             </div>
