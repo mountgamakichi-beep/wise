@@ -28,15 +28,14 @@ export default function Home() {
           <div className='text-center space-y-8'>
             <div className='inline-block px-4 py-2 rounded-full border border-border bg-secondary/30'>
               <span className='text-sm font-medium text-foreground'>
-                Understand Your On-Chain Activity
+                Web3 Pre-Launch Access
               </span>
             </div>
             <h1 className='text-5xl sm:text-6xl font-bold tracking-tight text-pretty'>
-              Web3 Simplified. Security Guaranteed.
+              Connect Your Wallet. Stay Updated.
             </h1>
             <p className='text-xl text-foreground/70 max-w-2xl mx-auto text-pretty'>
-              Track your balances across chains, get smarter insights about your
-              crypto usage, and interact with Web3 securely and confidently.
+              Connect your wallet to preview supported networks and stay informed about WalletWise updates. Read-only, secure, no transactions.
             </p>
             <div className='flex flex-col sm:flex-row gap-4 justify-center pt-4'>
               <Button
@@ -45,12 +44,12 @@ export default function Home() {
                 asChild
               >
                 <Link href='/connect' className='flex items-center gap-2'>
-                  Get Started{' '}
+                  Connect Wallet{' '}
                   <ArrowRight className='w-4 h-4 group-hover:translate-x-1 transition' />
                 </Link>
               </Button>
               <Button size='lg' variant='outline'>
-                Learn More
+                How It Works
               </Button>
             </div>
           </div>
@@ -62,11 +61,10 @@ export default function Home() {
         <div className='mx-auto max-w-7xl'>
           <div className='text-center space-y-6'>
             <p className='text-sm font-semibold text-primary uppercase tracking-wide'>
-              Trusted by Web3 Users
+              Security & Privacy First
             </p>
             <p className='text-lg max-w-2xl mx-auto'>
-              Non-custodial access. Read-only permissions. Your keys, your
-              control.
+              Read-only wallet connection. No private keys stored. Your data, your control.
             </p>
             <div className='flex flex-wrap gap-4 justify-center text-sm text-foreground/60'>
               <span className='flex items-center gap-2'>
@@ -88,14 +86,13 @@ export default function Home() {
         <div className='section-container'>
           <div className='text-center mb-20 space-y-6'>
             <p className='text-sm font-semibold text-primary uppercase tracking-widest'>
-              Complete Toolkit
+              Future Ready
             </p>
             <h2 className='text-foreground max-w-4xl mx-auto'>
-              Everything you need for Web3 clarity
+              Prepare for the Web3 future
             </h2>
             <p className='text-lg text-muted-foreground max-w-2xl mx-auto'>
-              Powerful features designed to give you complete control and
-              understanding of your on-chain portfolio
+              A preview of what's coming. Stay informed about network support and upcoming features.
             </p>
           </div>
 
@@ -103,33 +100,33 @@ export default function Home() {
             {[
               {
                 icon: <BarChart3 className='w-8 h-8' />,
-                title: 'Multi-Chain Tracking',
-                desc: 'See all your assets across 25+ blockchains in one unified dashboard',
+                title: 'Multi-Chain Preview',
+                desc: 'See supported blockchains and prepare your wallet for cross-chain readiness',
               },
               {
                 icon: <Eye className='w-8 h-8' />,
-                title: 'Transaction Clarity',
-                desc: 'Understand every transaction explained in clear, plain language',
+                title: 'Network Compatibility',
+                desc: 'Learn which networks WalletWise will support at launch and beyond',
               },
               {
                 icon: <TrendingUp className='w-8 h-8' />,
-                title: 'Portfolio Analytics',
-                desc: 'Deep insights into your holdings, performance, and allocation',
+                title: 'Early Interest',
+                desc: 'Join early access members to stay informed about new features',
               },
               {
                 icon: <Zap className='w-8 h-8' />,
-                title: 'Gas Optimization',
-                desc: 'Reduce fees with intelligent spending recommendations',
+                title: 'Quick Setup',
+                desc: 'Connect your wallet in seconds—no transactions or commitments',
               },
               {
                 icon: <Shield className='w-8 h-8' />,
-                title: 'Wallet Health',
-                desc: 'Security scoring and risk assessment for your portfolio',
+                title: 'Secure Connection',
+                desc: 'Read-only access means complete safety and privacy',
               },
               {
                 icon: <Layers className='w-8 h-8' />,
-                title: 'Activity Timeline',
-                desc: 'Complete history with advanced filtering by protocol and token',
+                title: 'Future Access',
+                desc: 'Prepare your wallet now for exclusive early access benefits',
               },
             ].map((item, i) => (
               <div
@@ -160,22 +157,20 @@ export default function Home() {
             <div className='space-y-8'>
               <div className='space-y-3'>
                 <p className='text-sm font-semibold text-primary uppercase tracking-widest'>
-                  On-Chain Intelligence
+                  Network Preview
                 </p>
                 <h2 className='text-foreground'>
-                  Understand your Web3 footprint
+                  Preview upcoming features
                 </h2>
               </div>
               <p className='text-lg text-muted-foreground leading-relaxed'>
-                Every transaction tells a story. WalletWise breaks down complex
-                interactions into clear narratives so you know exactly what you
-                own, what you've traded, and what you're exposed to.
+                See which blockchain networks WalletWise will support. Connect now to stay updated as we add new networks and prepare for full platform launch.
               </p>
               <ul className='space-y-4'>
                 {[
-                  'See the full context of every transaction',
-                  'Track your entry and exit prices',
-                  'Identify dormant holdings',
+                  'Preview 30+ supported blockchains',
+                  'Stay informed about new network additions',
+                  'Prepare your wallet for future features',
                 ].map((item, i) => (
                   <li key={i} className='flex gap-4'>
                     <Check className='w-6 h-6 text-primary flex-shrink-0' />
@@ -215,20 +210,18 @@ export default function Home() {
             <div className='space-y-8 order-1 lg:order-2'>
               <div className='space-y-3'>
                 <p className='text-sm font-semibold text-primary uppercase tracking-widest'>
-                  Data Intelligence
+                  Early Access Benefits
                 </p>
-                <h2 className='text-foreground'>Make smarter decisions</h2>
+                <h2 className='text-foreground'>Join the early community</h2>
               </div>
               <p className='text-lg text-muted-foreground leading-relaxed'>
-                Data without context is noise. We transform your on-chain
-                activity into actionable intelligence—showing you trends,
-                patterns, and opportunities aligned with your Web3 goals.
+                Connect your wallet to get early access updates. As a founding member, you'll be among the first to experience new features and shape the future of WalletWise.
               </p>
               <ul className='space-y-4'>
                 {[
-                  'Identify most profitable protocols',
-                  'Understand your trading patterns',
-                  'Get alerts on balance changes',
+                  'Exclusive founding member status',
+                  'First access to new features',
+                  'Direct input on development roadmap',
                 ].map((item, i) => (
                   <li key={i} className='flex gap-4'>
                     <Check className='w-6 h-6 text-primary flex-shrink-0' />
@@ -248,22 +241,20 @@ export default function Home() {
             <div className='space-y-8'>
               <div className='space-y-3'>
                 <p className='text-sm font-semibold text-primary uppercase tracking-widest'>
-                  Security & Control
+                  Safety & Trust
                 </p>
                 <h2 className='text-foreground'>
-                  Your keys. Your data. Always.
+                  Your wallet. Your control. Always.
                 </h2>
               </div>
               <p className='text-lg text-muted-foreground leading-relaxed'>
-                Non-custodial. Read-only. End-to-end encrypted. WalletWise is
-                built on the principle that you maintain complete ownership and
-                control of your assets and data at all times.
+                Read-only wallet connection. WalletWise never accesses private keys, initiates transactions, or stores sensitive data. Your security is our priority.
               </p>
               <ul className='space-y-4'>
                 {[
-                  'Connect any Web3 wallet securely',
-                  'Zero private key exposure risk',
-                  'Data encrypted end-to-end',
+                  'Connect any Web3 wallet with zero risk',
+                  'Private keys never exposed to WalletWise',
+                  'No transactions or transfers initiated',
                 ].map((item, i) => (
                   <li key={i} className='flex gap-4'>
                     <Check className='w-6 h-6 text-primary flex-shrink-0' />
@@ -294,7 +285,7 @@ export default function Home() {
               Simple & Secure
             </p>
             <h2 className='text-foreground max-w-3xl mx-auto'>
-              Three simple steps to clarity
+              Three steps to get started
             </h2>
           </div>
 
@@ -303,17 +294,17 @@ export default function Home() {
               {
                 num: '01',
                 title: 'Connect Your Wallet',
-                desc: 'Link any Web3 wallet securely through WalletConnect or your provider. No private keys required.',
+                desc: 'Link any Web3 wallet securely. WalletWise is read-only—no transactions will occur.',
               },
               {
                 num: '02',
-                title: 'Automatic Analysis',
-                desc: 'WalletWise indexes your transactions and balances across all supported chains in seconds.',
+                title: 'Preview Networks',
+                desc: 'See all 30+ supported blockchains and stay informed about upcoming network additions.',
               },
               {
                 num: '03',
-                title: 'Get Clarity',
-                desc: 'Explore your complete portfolio and make informed decisions about your next Web3 move.',
+                title: 'Stay Updated',
+                desc: 'Get early access updates and be among the first to experience new WalletWise features.',
               },
             ].map((item, i) => (
               <div key={i} className='space-y-6'>
@@ -336,10 +327,9 @@ export default function Home() {
       <section className='section-padding bg-card/50 border-y border-muted'>
         <div className='section-container max-w-3xl mx-auto text-center space-y-10'>
           <div className='space-y-5'>
-            <h2 className='text-foreground'>Ready to understand your Web3?</h2>
+            <h2 className='text-foreground'>Ready to stay updated?</h2>
             <p className='text-xl text-muted-foreground leading-relaxed'>
-              Join thousands of users getting clarity on their on-chain
-              portfolio. Early access members get lifetime premium features.
+              Connect your wallet today to receive early access updates and shape the future of WalletWise. No commitments, no transactions—just early access information.
             </p>
           </div>
 
@@ -358,12 +348,12 @@ export default function Home() {
               variant='outline'
               className='w-full sm:w-auto border-muted hover:bg-muted/40 text-foreground font-semibold rounded-lg h-12 px-8 bg-transparent'
             >
-              Join Waitlist
+              Learn More
             </Button>
           </div>
 
           <p className='text-sm text-muted-foreground'>
-            Limited early access slots available — join while spaces remain
+            Early access is limited. Connect now to secure your spot.
           </p>
         </div>
       </section>

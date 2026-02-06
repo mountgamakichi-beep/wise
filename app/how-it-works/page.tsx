@@ -13,49 +13,49 @@ export default function HowItWorksPage() {
     {
       number: 1,
       title: 'Connect Your Wallet',
-      description: 'Link any Web3 wallet securely through WalletConnect or your preferred provider. No private keys required.',
+      description: 'Link any Web3 wallet securely. No private keys required. Read-only access only.',
       icon: Link2,
       details: [
-        'Choose from MetaMask, Trust Wallet, Ledger, Coinbase Wallet, Rainbow, or any WalletConnect-compatible wallet',
-        'Click "Connect Wallet" and follow the wallet\'s authentication flow',
-        'Your private keys never leave your device—we only get your wallet address',
-        'Grant read-only permission to view your public blockchain data',
+        'Choose from MetaMask, Trust Wallet, Ledger, Coinbase Wallet, or any WalletConnect wallet',
+        'Click "Connect Wallet" and follow your wallet\'s connection flow',
+        'Your private keys never leave your device',
+        'Approve read-only access to your public wallet data',
       ],
     },
     {
       number: 2,
-      title: 'Automatic Indexing',
-      description: 'WalletWise automatically scans and indexes your transactions across all supported chains in seconds.',
+      title: 'Preview Networks',
+      description: 'See all 30+ supported blockchain networks. Learn about cross-chain readiness.',
       icon: Zap,
       details: [
-        'We query the blockchain for your wallet address across all supported networks',
-        'Historical data is retrieved from decentralized RPC nodes and indexing services',
-        'All queries use your public wallet address—nothing private is exposed',
-        'Real-time updates ensure you always see your latest on-chain activity',
+        'View complete list of supported blockchains at WalletWise launch',
+        'Understand which networks your wallet currently uses',
+        'Prepare for multi-chain features coming soon',
+        'Stay updated as more networks are added',
       ],
     },
     {
       number: 3,
-      title: 'Analysis & Decoding',
-      description: 'Our engine analyzes your activity and transforms complex transactions into clear, understandable actions.',
+      title: 'Get Early Access',
+      description: 'Receive updates about new features and upcoming platform launch.',
       icon: Brain,
       details: [
-        'Transactions are decoded to show token swaps, liquidity movements, and protocol interactions',
-        'Smart contract calls are translated into plain language explanations',
-        'Gas fees are calculated and categorized by transaction type',
-        'Your activities are organized by protocol, token, and time period',
+        'Enable early access notifications for your wallet address',
+        'Receive exclusive founding member updates',
+        'Be notified when new features become available',
+        'Help shape WalletWise development with your feedback',
       ],
     },
     {
       number: 4,
-      title: 'Explore & Optimize',
-      description: 'Get actionable insights, portfolio analytics, and optimization recommendations for your crypto holdings.',
+      title: 'Stay Prepared',
+      description: 'Prepare your wallet for the full WalletWise experience at launch.',
       icon: BarChart3,
       details: [
-        'View your complete portfolio composition across all chains',
-        'Discover gas optimization opportunities and savings',
-        'Get wallet health score and security recommendations',
-        'Make informed decisions about your Web3 activity',
+        'Keep your wallet connected to stay informed',
+        'Experience the read-only preview of supported networks',
+        'Join the founding community of early adopters',
+        'Be ready when full features become available',
       ],
     },
   ];
@@ -63,9 +63,9 @@ export default function HowItWorksPage() {
   const timeline = [
     { time: '0s', event: 'Wallet Connection Initiated' },
     { time: '1s', event: 'Wallet Address Verified' },
-    { time: '3s', event: 'On-Chain Data Indexing Begins' },
-    { time: '5-10s', event: 'All Chains Scanned & Analyzed' },
-    { time: '10s', event: 'Dashboard Ready with Full Insights' },
+    { time: '2s', event: 'Security Check Complete' },
+    { time: '3s', event: 'Read-Only Access Granted' },
+    { time: '5s', event: 'Network Preview Ready' },
   ];
 
   return (
@@ -73,7 +73,7 @@ export default function HowItWorksPage() {
       <Navigation />
       <PageHeader
         title="How It Works"
-        subtitle="Simple, secure, and transparent. Understand every step of the WalletWise process."
+        subtitle="Simple, secure, transparent. See how to connect and prepare for WalletWise at launch."
         badge="Step by Step"
       />
 
@@ -128,7 +128,12 @@ export default function HowItWorksPage() {
               <div className={i % 2 === 1 ? 'lg:order-2' : ''}>
                 <div className="space-y-6">
                   <div className="flex items-center gap-4">
-                    <div className="text-5xl">{step.icon}</div>
+                    <div className="text-5xl">
+                      {(() => {
+                        const Icon = step.icon;
+                        return <Icon className="w-12 h-12 text-primary" />;
+                      })()}
+                    </div>
                     <div>
                       <p className="text-primary font-bold text-sm uppercase">Step {step.number}</p>
                       <h2 className="text-3xl lg:text-4xl font-black tracking-tight text-foreground">
@@ -154,7 +159,12 @@ export default function HowItWorksPage() {
               </div>
               <div className={i % 2 === 1 ? 'lg:order-1' : ''}>
                 <div className="card-glow p-12 h-full flex items-center justify-center">
-                  <div className="text-8xl opacity-40">{step.icon}</div>
+                  <div className="opacity-40">
+                    {(() => {
+                      const Icon = step.icon;
+                      return <Icon className="w-32 h-32 text-primary" />;
+                    })()}
+                  </div>
                 </div>
               </div>
             </div>
@@ -202,28 +212,28 @@ export default function HowItWorksPage() {
           <div className="space-y-6">
             {[
               {
-                q: 'How is my wallet data analyzed?',
-                a: 'We use a combination of on-chain indexing services and real-time blockchain queries to fetch your transaction history and current balances. All analysis happens securely.',
+                q: 'Is this truly read-only?',
+                a: 'Yes, completely. WalletWise has no ability to execute transactions, move funds, or access private keys. You maintain total control.',
               },
               {
                 q: 'Can I connect multiple wallets?',
-                a: 'Yes! You can add multiple wallets to your WalletWise dashboard and see all your portfolios in one unified view.',
+                a: 'Yes, you can connect multiple wallets to receive early access updates for all of them.',
               },
               {
-                q: 'How often is my data updated?',
-                a: 'Your data updates in real-time as transactions occur on-chain. You\'ll always see your latest balances and activity.',
+                q: 'How will I be notified of updates?',
+                a: 'You\'ll receive notifications about new features, network additions, and WalletWise launch updates to your connected wallet address.',
               },
               {
                 q: 'What blockchains are supported?',
-                a: 'WalletWise supports 30+ blockchains including Ethereum, Polygon, Arbitrum, Optimism, Base, Solana, and more.',
+                a: 'Currently previewing 30+ blockchains including Ethereum, Polygon, Arbitrum, Optimism, Base, Solana, and more. More coming soon.',
               },
               {
-                q: 'Is my data saved after I disconnect?',
-                a: 'No, your data is not saved on our servers. When you disconnect, your session ends and data is cleared.',
+                q: 'When does WalletWise launch?',
+                a: 'We\'re in early access. Connect now to be notified the moment full features become available to founding members.',
               },
               {
-                q: 'Can I export my wallet data?',
-                a: 'Yes, you can export your transaction history and portfolio data as CSV for tax reporting and record keeping.',
+                q: 'Can I disconnect anytime?',
+                a: 'Yes, you can disconnect anytime without consequences. Your connection is entirely voluntary.',
               },
             ].map((item, i) => (
               <div key={i} className="card-glow p-6">
@@ -239,15 +249,15 @@ export default function HowItWorksPage() {
       <section className="section-padding bg-card/50 border-y border-border/50">
         <div className="section-container text-center space-y-8">
           <div className="space-y-4">
-            <h2 className="gradient-text">Ready to Get Started?</h2>
+            <h2 className="gradient-text">Ready to Join the Early Access?</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Connect your wallet now and experience clarity in your on-chain activity.
+              Connect your wallet to get exclusive early access updates and be part of the WalletWise founding community.
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/connect">
               <Button size="lg" className="gradient-button">
-                Connect Wallet Now
+                Connect Wallet
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>

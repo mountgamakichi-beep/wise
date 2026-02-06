@@ -7,10 +7,12 @@ import { Button } from '@/components/ui/button';
 import { Navigation } from '@/components/navigation';
 import { Footer } from '@/components/footer';
 import { PageHeader } from '@/components/page-header';
+import { NetworksList } from '@/components/networks-list';
 import { ArrowRight, CheckCircle2, Wallet, Shield, Lock, Briefcase, Zap, Box, Link2, LayoutGrid } from 'lucide-react';
 
 export default function ConnectPage() {
   const [selectedWallet, setSelectedWallet] = useState<string | null>(null);
+  const [showModal, setShowModal] = useState(false);
 
   const wallets = [
     {
@@ -68,8 +70,8 @@ export default function ConnectPage() {
       <Navigation />
       <PageHeader
         title="Connect Your Wallet"
-        subtitle="Choose your favorite wallet provider and connect securely to WalletWise. Non-custodial, read-only access."
-        badge="Web3 Native"
+        subtitle="Choose your wallet and connect for early access. Read-only, secure, no transactions."
+        badge="Early Access"
       />
 
       {/* Hero Image Section */}
@@ -94,7 +96,7 @@ export default function ConnectPage() {
           <div className="mb-12">
             <h2 className="text-3xl font-bold mb-4 text-foreground">Supported Wallets</h2>
             <p className="text-muted-foreground max-w-2xl">
-              We support all major Web3 wallets. Select one to see supported blockchains.
+              Choose your wallet to preview supported networks and gain early access.
             </p>
           </div>
 
@@ -104,58 +106,22 @@ export default function ConnectPage() {
               return (
                 <button
                   key={wallet.id}
-                  onClick={() =>
-                    setSelectedWallet(selectedWallet === wallet.id ? null : wallet.id)
-                  }
-                  className={`card-glow p-6 text-center transition-all ${
-                    selectedWallet === wallet.id
-                      ? 'border-primary/60 bg-primary/10'
-                      : 'border-primary/20'
-                  }`}
+                  onClick={() => {
+                    setSelectedWallet(wallet.id);
+                    setShowModal(true);
+                  }}
+                  className="card-glow p-6 text-center transition-all border-primary/20 hover:border-primary/40"
                 >
                   <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-3 group-hover:bg-primary/20 transition-colors">
                     <Icon className="w-6 h-6 text-primary" />
                   </div>
                   <h3 className="font-bold text-foreground mb-2">{wallet.name}</h3>
-                  {selectedWallet === wallet.id && (
-                    <div className="mt-3 pt-3 border-t border-primary/20">
-                      <p className="text-xs text-muted-foreground font-mono mb-2">
-                        Networks:
-                      </p>
-                      <div className="flex flex-wrap gap-2 justify-center">
-                        {wallet.networks.map((net) => (
-                          <span
-                            key={net}
-                            className="text-xs px-2 py-1 bg-primary/20 text-primary rounded-full"
-                          >
-                            {net}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  )}
                 </button>
               );
             })}
           </div>
 
-          {selectedWallet && (
-            <div className="card-glow p-8 text-center space-y-6">
-              <div>
-                <h3 className="text-2xl font-bold mb-2 text-foreground">
-                  Ready to Connect?
-                </h3>
-                <p className="text-muted-foreground">
-                  Your connection is secure and read-only. We never access your private keys.
-                </p>
-              </div>
-              <Button size="lg" className="gradient-button">
-                Continue with{' '}
-                {wallets.find((w) => w.id === selectedWallet)?.name}
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </div>
-          )}
+
         </div>
       </section>
 
@@ -165,26 +131,26 @@ export default function ConnectPage() {
           <div className="mb-12">
             <h2 className="text-3xl font-bold mb-4 text-foreground">Why These Wallets?</h2>
             <p className="text-muted-foreground max-w-2xl">
-              We partner with industry-leading wallets that prioritize security and user control.
+              We support trusted wallets that prioritize security. Your connection is read-only and completely safe.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                title: 'Industry Leading',
+                title: 'Trusted Partners',
                 description:
-                  'All supported wallets are trusted by millions of users worldwide.',
+                  'All supported wallets are trusted by millions and maintain the highest security standards.',
               },
               {
-                title: 'Security First',
+                title: 'Read-Only Connection',
                 description:
-                  'Each wallet maintains high security standards and regular audits.',
+                  'WalletWise only views your wallet data. No transactions can be initiated.',
               },
               {
                 title: 'Your Control',
                 description:
-                  'Non-custodial by design. You maintain full control of your assets.',
+                  'Non-custodial. You maintain complete control of your assets and keys.',
               },
             ].map((item, i) => (
               <div key={i} className="card-glow p-6">
@@ -199,45 +165,7 @@ export default function ConnectPage() {
 
       {/* Network Support Section */}
       <section className="section-padding">
-        <div className="section-container">
-          <h2 className="text-3xl font-bold mb-4 text-foreground">Blockchain Networks Supported</h2>
-          <p className="text-muted-foreground max-w-2xl mb-12">
-            WalletWise supports 30+ blockchain networks, with support for more being added regularly.
-          </p>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {[
-              'Ethereum',
-              'Polygon',
-              'Arbitrum One',
-              'Optimism',
-              'Base',
-              'Avalanche',
-              'Binance Smart Chain',
-              'Solana',
-              'Fantom',
-              'Gnosis Chain',
-              'Celo',
-              'zkSync Era',
-              'StarkNet',
-              'Linea',
-              'Scroll',
-              'Aurora',
-              'Harmony',
-              'Moonbeam',
-              'Cronos',
-              'Polygon zkEVM',
-            ].map((network) => (
-              <div
-                key={network}
-                className="card-glow px-6 py-4 flex items-center gap-3"
-              >
-                <CheckCircle2 className="text-primary h-5 w-5 flex-shrink-0" />
-                <span className="text-foreground">{network}</span>
-              </div>
-            ))}
-          </div>
-        </div>
+        <NetworksList />
       </section>
 
       {/* FAQ Section */}
@@ -251,19 +179,19 @@ export default function ConnectPage() {
             {[
               {
                 q: 'Is my connection secure?',
-                a: 'Yes. WalletWise uses read-only access with encrypted end-to-end communication. Your private keys are never shared.',
+                a: 'Completely. WalletWise uses read-only access only. Your private keys are never exposed and no transactions can occur.',
               },
               {
                 q: 'Can I connect multiple wallets?',
-                a: 'Yes, you can connect and track multiple wallets in your WalletWise dashboard simultaneously.',
+                a: 'Yes, you can connect multiple wallets to stay informed about updates across all your accounts.',
               },
               {
-                q: 'What if I disconnect my wallet?',
-                a: 'You can disconnect anytime. Your historical data will be preserved for when you reconnect.',
+                q: 'Will any transactions occur?',
+                a: 'No. This is a read-only early access connection. WalletWise cannot and will not initiate any transactions.',
               },
               {
-                q: 'Do you store my wallet address?',
-                a: 'We store encrypted wallet addresses only for your connected sessions. Your data is never shared with third parties.',
+                q: 'How is my data used?',
+                a: 'We only use your wallet address to send you early access updates. We never store or share your personal data.',
               },
             ].map((item, i) => (
               <div key={i} className="card-glow p-6">
@@ -276,6 +204,31 @@ export default function ConnectPage() {
       </section>
 
       <Footer />
+
+      {/* Modal */}
+      {showModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
+          <div className="bg-background border border-primary/30 rounded-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto card-glow">
+            <div className="p-8 sm:p-12 flex flex-col items-center justify-center min-h-96 sm:min-h-[50vh] text-center space-y-6">
+              <div>
+                <h2 className="text-4xl font-bold mb-4 text-foreground">
+                  Under Development
+                </h2>
+                <p className="text-lg text-muted-foreground max-w-md mx-auto leading-relaxed">
+                  The {selectedWallet ? wallets.find((w) => w.id === selectedWallet)?.name : 'wallet'} connection feature is currently being developed. Check back soon for updates!
+                </p>
+              </div>
+              <Button
+                size="lg"
+                onClick={() => setShowModal(false)}
+                className="gradient-button mt-6"
+              >
+                Close
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
