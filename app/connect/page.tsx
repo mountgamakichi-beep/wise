@@ -11,6 +11,7 @@ import { ArrowRight, CheckCircle2, Wallet, Shield, Lock, Briefcase, Zap, Box, Li
 
 export default function ConnectPage() {
   const [selectedWallet, setSelectedWallet] = useState<string | null>(null);
+  const [showModal, setShowModal] = useState(false);
 
   const wallets = [
     {
@@ -104,58 +105,22 @@ export default function ConnectPage() {
               return (
                 <button
                   key={wallet.id}
-                  onClick={() =>
-                    setSelectedWallet(selectedWallet === wallet.id ? null : wallet.id)
-                  }
-                  className={`card-glow p-6 text-center transition-all ${
-                    selectedWallet === wallet.id
-                      ? 'border-primary/60 bg-primary/10'
-                      : 'border-primary/20'
-                  }`}
+                  onClick={() => {
+                    setSelectedWallet(wallet.id);
+                    setShowModal(true);
+                  }}
+                  className="card-glow p-6 text-center transition-all border-primary/20 hover:border-primary/40"
                 >
                   <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-3 group-hover:bg-primary/20 transition-colors">
                     <Icon className="w-6 h-6 text-primary" />
                   </div>
                   <h3 className="font-bold text-foreground mb-2">{wallet.name}</h3>
-                  {selectedWallet === wallet.id && (
-                    <div className="mt-3 pt-3 border-t border-primary/20">
-                      <p className="text-xs text-muted-foreground font-mono mb-2">
-                        Networks:
-                      </p>
-                      <div className="flex flex-wrap gap-2 justify-center">
-                        {wallet.networks.map((net) => (
-                          <span
-                            key={net}
-                            className="text-xs px-2 py-1 bg-primary/20 text-primary rounded-full"
-                          >
-                            {net}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  )}
                 </button>
               );
             })}
           </div>
 
-          {selectedWallet && (
-            <div className="card-glow p-8 text-center space-y-6">
-              <div>
-                <h3 className="text-2xl font-bold mb-2 text-foreground">
-                  Ready to Connect?
-                </h3>
-                <p className="text-muted-foreground">
-                  Secure read-only connection. No transactions will occur. Your private keys remain safe.
-                </p>
-              </div>
-              <Button size="lg" className="gradient-button">
-                Connect with{' '}
-                {wallets.find((w) => w.id === selectedWallet)?.name}
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </div>
-          )}
+
         </div>
       </section>
 
@@ -276,6 +241,31 @@ export default function ConnectPage() {
       </section>
 
       <Footer />
+
+      {/* Modal */}
+      {showModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
+          <div className="bg-background border border-primary/30 rounded-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto card-glow">
+            <div className="p-8 sm:p-12 flex flex-col items-center justify-center min-h-96 sm:min-h-[50vh] text-center space-y-6">
+              <div>
+                <h2 className="text-4xl font-bold mb-4 text-foreground">
+                  Under Development
+                </h2>
+                <p className="text-lg text-muted-foreground max-w-md mx-auto leading-relaxed">
+                  The {selectedWallet ? wallets.find((w) => w.id === selectedWallet)?.name : 'wallet'} connection feature is currently being developed. Check back soon for updates!
+                </p>
+              </div>
+              <Button
+                size="lg"
+                onClick={() => setShowModal(false)}
+                className="gradient-button mt-6"
+              >
+                Close
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
