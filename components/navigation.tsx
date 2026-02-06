@@ -41,9 +41,9 @@ export function Navigation() {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Link href="/connect">
+              <Link href="/connect">
               <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-lg h-10 px-6">
-                Connect
+                Connect Wallet
               </Button>
             </Link>
           </div>

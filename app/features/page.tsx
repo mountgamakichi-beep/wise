@@ -20,74 +20,74 @@ export default function FeaturesPage() {
   const features = [
     {
       icon: <BarChart3 />,
-      title: 'Multi-Chain Balance Tracking',
-      description: 'See all your assets across Ethereum, Polygon, Arbitrum, Optimism, and 25+ other blockchains in one unified dashboard.',
+      title: 'Multi-Chain Network Support',
+      description: 'Access all your accounts across 30+ blockchains from a single dashboard.',
       label: 'Multi-Chain',
       benefits: [
         'Unified portfolio view across all chains',
-        'Real-time balance updates',
-        'Asset breakdown by chain',
-        'Multi-chain routing suggestions',
+        'Support for major networks at launch',
+        'Easy wallet switching',
+        'Network expansion planned regularly',
       ],
     },
     {
       icon: <Eye />,
-      title: 'Transaction Clarity',
-      description: 'Understand exactly what happened in every transaction with detailed breakdowns explained in plain language.',
+      title: 'Clear Transaction Insights',
+      description: 'Understand your on-chain activity with clear, plain language explanations.',
       label: 'Insights',
       benefits: [
-        'Plain language transaction explanations',
-        'Token swap tracking',
-        'Smart contract interaction details',
-        'Fee impact analysis',
+        'Simple transaction breakdowns',
+        'Activity timeline and history',
+        'Easy-to-understand summaries',
+        'Network activity tracking',
       ],
     },
     {
       icon: <Gauge />,
-      title: 'Portfolio Composition',
-      description: 'Visualize your asset allocation and track exposure across DeFi protocols, NFTs, staking, and tokens.',
+      title: 'Portfolio Overview',
+      description: 'Visualize your assets and understand your wallet composition at a glance.',
       label: 'Analytics',
       benefits: [
-        'Visual asset allocation',
-        'Protocol exposure tracking',
-        'Diversification insights',
-        'Rebalancing recommendations',
+        'Asset allocation overview',
+        'Balance tracking',
+        'Network breakdown view',
+        'Easy portfolio monitoring',
       ],
     },
     {
       icon: <Zap />,
-      title: 'Gas & Fee Optimization',
-      description: 'Learn where you are spending the most on gas fees and get actionable recommendations to optimize future transactions.',
+      title: 'Network Insights',
+      description: 'Learn about the networks you use and optimize your Web3 preparation.',
       label: 'Optimization',
       benefits: [
-        'Historical gas spending analysis',
-        'Network optimization tips',
-        'Batch transaction suggestions',
-        'Cost savings projections',
+        'Network information and details',
+        'Fee and cost context',
+        'Activity summaries',
+        'Wallet readiness preparation',
       ],
     },
     {
       icon: <Shield />,
-      title: 'Wallet Health Score',
-      description: 'A simple, transparent score that shows wallet activity level and highlights any security considerations worth reviewing.',
+      title: 'Read-Only Security',
+      description: 'Connect with complete peace of mind. No transactions, no risk, no private key exposure.',
       label: 'Security',
       benefits: [
-        'Activity health metrics',
-        'Security risk indicators',
-        'Best practice recommendations',
-        'Compliance tracking',
+        'Read-only connection guarantee',
+        'No private key access',
+        'No transaction capability',
+        'Secure by design',
       ],
     },
     {
       icon: <Layers />,
-      title: 'Activity Timeline',
-      description: 'A complete chronological record of every action tied to your wallet with smart filters and search capabilities.',
+      title: 'Activity History',
+      description: 'Access your complete transaction history with search and filter capabilities.',
       label: 'History',
       benefits: [
-        'Complete transaction history',
-        'Advanced filtering options',
-        'CSV export functionality',
-        'Tax report generation',
+        'Complete activity records',
+        'Searchable transaction history',
+        'Timeline organization',
+        'Easy activity tracking',
       ],
     },
   ];
@@ -96,9 +96,9 @@ export default function FeaturesPage() {
     <div className="bg-background text-foreground min-h-screen">
       <Navigation />
       <PageHeader
-        title="Powerful Features"
-        subtitle="Everything you need to understand, monitor, and optimize your Web3 portfolio with confidence."
-        badge="Full Toolkit"
+        title="Upcoming Features"
+        subtitle="A preview of what's coming with WalletWise. These features will be available at launch."
+        badge="Coming Soon"
       />
 
       {/* Main Features Grid */}
@@ -165,7 +165,7 @@ export default function FeaturesPage() {
           <div className="text-center mb-12">
             <h2 className="text-4xl font-black mb-4 text-foreground">How We Compare</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              WalletWise goes beyond simple block explorers with intelligent insights and portfolio management.
+              WalletWise combines the best of wallet simplicity with the depth of block explorer data, designed specifically for early access.
             </p>
           </div>
 
@@ -225,15 +225,15 @@ export default function FeaturesPage() {
       <section className="section-padding bg-card/50 border-y border-border/50">
         <div className="section-container text-center space-y-8">
           <div className="space-y-4">
-            <h2 className="gradient-text">Ready to Explore All Features?</h2>
+            <h2 className="gradient-text">Ready for What's Coming?</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Connect your wallet and start discovering clarity in your on-chain portfolio.
+              Connect your wallet today to get early access updates and be among the first to experience these features.
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/connect">
               <Button size="lg" className="gradient-button">
-                Connect Wallet Now
+                Connect Wallet
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>

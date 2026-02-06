@@ -68,8 +68,8 @@ export default function ConnectPage() {
       <Navigation />
       <PageHeader
         title="Connect Your Wallet"
-        subtitle="Choose your favorite wallet provider and connect securely to WalletWise. Non-custodial, read-only access."
-        badge="Web3 Native"
+        subtitle="Choose your wallet and connect for early access. Read-only, secure, no transactions."
+        badge="Early Access"
       />
 
       {/* Hero Image Section */}
@@ -94,7 +94,7 @@ export default function ConnectPage() {
           <div className="mb-12">
             <h2 className="text-3xl font-bold mb-4 text-foreground">Supported Wallets</h2>
             <p className="text-muted-foreground max-w-2xl">
-              We support all major Web3 wallets. Select one to see supported blockchains.
+              Choose your wallet to preview supported networks and gain early access.
             </p>
           </div>
 
@@ -146,11 +146,11 @@ export default function ConnectPage() {
                   Ready to Connect?
                 </h3>
                 <p className="text-muted-foreground">
-                  Your connection is secure and read-only. We never access your private keys.
+                  Secure read-only connection. No transactions will occur. Your private keys remain safe.
                 </p>
               </div>
               <Button size="lg" className="gradient-button">
-                Continue with{' '}
+                Connect with{' '}
                 {wallets.find((w) => w.id === selectedWallet)?.name}
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
@@ -165,26 +165,26 @@ export default function ConnectPage() {
           <div className="mb-12">
             <h2 className="text-3xl font-bold mb-4 text-foreground">Why These Wallets?</h2>
             <p className="text-muted-foreground max-w-2xl">
-              We partner with industry-leading wallets that prioritize security and user control.
+              We support trusted wallets that prioritize security. Your connection is read-only and completely safe.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                title: 'Industry Leading',
+                title: 'Trusted Partners',
                 description:
-                  'All supported wallets are trusted by millions of users worldwide.',
+                  'All supported wallets are trusted by millions and maintain the highest security standards.',
               },
               {
-                title: 'Security First',
+                title: 'Read-Only Connection',
                 description:
-                  'Each wallet maintains high security standards and regular audits.',
+                  'WalletWise only views your wallet data. No transactions can be initiated.',
               },
               {
                 title: 'Your Control',
                 description:
-                  'Non-custodial by design. You maintain full control of your assets.',
+                  'Non-custodial. You maintain complete control of your assets and keys.',
               },
             ].map((item, i) => (
               <div key={i} className="card-glow p-6">
@@ -202,7 +202,7 @@ export default function ConnectPage() {
         <div className="section-container">
           <h2 className="text-3xl font-bold mb-4 text-foreground">Blockchain Networks Supported</h2>
           <p className="text-muted-foreground max-w-2xl mb-12">
-            WalletWise supports 30+ blockchain networks, with support for more being added regularly.
+            Preview the 30+ blockchain networks where WalletWise will operate at launch. More networks coming soon.
           </p>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -251,19 +251,19 @@ export default function ConnectPage() {
             {[
               {
                 q: 'Is my connection secure?',
-                a: 'Yes. WalletWise uses read-only access with encrypted end-to-end communication. Your private keys are never shared.',
+                a: 'Completely. WalletWise uses read-only access only. Your private keys are never exposed and no transactions can occur.',
               },
               {
                 q: 'Can I connect multiple wallets?',
-                a: 'Yes, you can connect and track multiple wallets in your WalletWise dashboard simultaneously.',
+                a: 'Yes, you can connect multiple wallets to stay informed about updates across all your accounts.',
               },
               {
-                q: 'What if I disconnect my wallet?',
-                a: 'You can disconnect anytime. Your historical data will be preserved for when you reconnect.',
+                q: 'Will any transactions occur?',
+                a: 'No. This is a read-only early access connection. WalletWise cannot and will not initiate any transactions.',
               },
               {
-                q: 'Do you store my wallet address?',
-                a: 'We store encrypted wallet addresses only for your connected sessions. Your data is never shared with third parties.',
+                q: 'How is my data used?',
+                a: 'We only use your wallet address to send you early access updates. We never store or share your personal data.',
               },
             ].map((item, i) => (
               <div key={i} className="card-glow p-6">

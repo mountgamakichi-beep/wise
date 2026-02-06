@@ -47,10 +47,10 @@ export function Footer() {
                 </span>
               </Link>
               <p className="mt-4 text-sm text-muted-foreground">
-                Transform your on-chain activity into clarity and actionable insights.
+                Connect your wallet. Stay informed. Prepare for the Web3 future.
               </p>
               <p className="mt-6 text-xs text-muted-foreground">
-                Non-custodial. Read-only. Your keys, your data, always.
+                Read-only access. No private keys. Secure by design.
               </p>
             </div>
 
@@ -104,7 +104,7 @@ export function Footer() {
                 © {currentYear} WalletWise. All rights reserved.
               </p>
               <p className="text-xs text-muted-foreground">
-                WalletWise is not a financial advisor. We provide tools for tracking and understanding your on-chain activity.
+                WalletWise is in early access. This is a read-only preview. No transactions can occur.
               </p>
             </div>
           </div>
