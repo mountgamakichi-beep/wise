@@ -165,7 +165,8 @@ export default function ConnectPage() {
 
       {/* Network Support Section */}
       <section className="section-padding">
-      <NetworksList />
+        <NetworksList />
+      </section>
 
       {/* FAQ Section */}
       <section className="section-padding bg-card/30">
